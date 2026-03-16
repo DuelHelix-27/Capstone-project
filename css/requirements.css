@@ -1,0 +1,185 @@
+/* Navigation Menu */
+.nav-menu {
+  width: 100%;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--font-color-secondary);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.05);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 10;
+}
+.nav-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+}
+.nav-menu li {
+  margin: 0 18px;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: var(--font-color-primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--font-color-secondary);
+  background: rgba(30, 144, 255, 0.08);
+  text-shadow: 0 0 8px var(--font-color-secondary);
+  outline: none;
+}
+/* requirements.css - Theme matches hips.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap");
+
+:root {
+  --font-color-primary: #e4ecff;
+  --font-color-secondary: #1e90ff;
+  --font-color-paragraph: #a8b3cf;
+  --background-primary: #0b0f1a;
+  --background-secondary: #10192c;
+  --hover-color: #00bfff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace, sans-serif;
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--font-color-primary);
+  min-height: 100vh;
+}
+
+.user-stories {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px 40px 20px;
+}
+
+.user-stories h2 {
+  color: var(--font-color-secondary);
+  font-size: 2.2rem;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.story-card {
+  background: var(--background-secondary);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(30, 144, 255, 0.08);
+  padding: 32px 28px 24px 28px;
+  margin-bottom: 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.18s;
+}
+.story-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(30, 144, 255, 0.13);
+}
+.story-card h3 {
+  color: var(--font-color-secondary);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.story-card h4 {
+  color: var(--font-color-primary);
+  font-size: 1.08rem;
+  margin: 18px 0 8px 0;
+  font-weight: 600;
+}
+.story-text {
+  color: var(--font-color-paragraph);
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+.story-card ul {
+  list-style: disc inside;
+  color: var(--font-color-primary);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  line-height: 1.7;
+}
+.story-card li {
+  margin-bottom: 8px;
+}
+
+/* User Flow Gallery */
+.user-flow-card {
+  max-width: 900px;
+}
+.flow-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 24px;
+}
+.flow-item {
+  background: #151d2e;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.07);
+  padding: 18px 18px 12px 18px;
+  max-width: 340px;
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flow-item h4 {
+  color: var(--font-color-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.flow-item img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.1);
+  background: #0b0f1a;
+}
+.flow-item p {
+  color: var(--font-color-paragraph);
+  font-size: 0.98rem;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* Figma Embed */
+.figma-container {
+  margin-top: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.1);
+}
+.figma-container iframe {
+  border-radius: 10px;
+  width: 100%;
+  min-height: 400px;
+  background: #0b0f1a;
+}
+
+footer {
+  background: var(--background-secondary);
+  padding: 18px 0;
+  text-align: center;
+  color: var(--font-color-paragraph);
+  border-radius: 0 0 12px 12px;
+  margin-top: 40px;
+  box-shadow: 0 -2px 8px 0 rgba(30, 144, 255, 0.04);
+}

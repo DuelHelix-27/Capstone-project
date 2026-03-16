@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification | Hidden In Plain Sight</title>
+    <link rel="stylesheet" href="../css/testing.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Begin NAVIGATION section -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="requirements.html">Requirements</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="design.html">Detailed Design</a></li>
+        <li><a href="testing.html">Verification</a></li>
+        <li><a href="management.html">Management</a></li>
+      </ul>
+    </nav>
+    <!-- End of NAVIGATION section -->
+    <main>
+      <!-- Begin TESTING OVERVIEW section -->
+      <section class="testing-overview">
+        <h2>Testing & Validation Plan</h2>
+        <p class="section-text">
+          This section describes how Hidden In Plain Sight will be tested across
+          the Android frontend, the native C++ backend, and full system
+          workflows.
+        </p>
+      </section>
+      <!-- End TESTING OVERVIEW section -->
+
+      <!-- Begin UNIT TESTS section -->
+      <section class="unit-tests">
+        <h2>Unit Tests</h2>
+        <p class="section-text">
+          Unit tests verify that individual components behave correctly before
+          the full system is tested.
+        </p>
+        <table class="testing-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Test</th>
+              <th>Expected Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kotlin UI / Logic</td>
+              <td>Reject messages longer than 100 characters</td>
+              <td>Input is blocked and an error is shown</td>
+            </tr>
+            <tr>
+              <td>C++ Steganography Layer</td>
+              <td>Test a mock 8x8 DCT block with a binary input</td>
+              <td>DCT coefficients are modified as expected</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- End UNIT TESTS section -->
+
+      <!-- Begin INTEGRATION TESTS section -->
+      <section class="integration-tests">
+        <h2>Integration Tests</h2>
+        <p class="section-text">
+          Integration tests verify that the Android frontend, JNI bridge, and
+          native C++ backend work together correctly.
+        </p>
+        <div class="integration-grid">
+          <div class="testing-card">
+            <h3>JNI Embedding Flow</h3>
+            <p>
+              The frontend sends a test image buffer and a 50-character message
+              through JNI, the C++ backend performs embedding, and the frontend
+              receives the returned stego image buffer.
+            </p>
+            <p>
+              <strong>Expected Result:</strong> The returned image buffer is
+              valid, with no memory leaks or data loss.
+            </p>
+          </div>
+          <div class="testing-card">
+            <h3>Hidden Unlock Flow</h3>
+            <p>
+              The disguised journal interface is tested to confirm that the
+              correct 5-tap unlock sequence reveals the hidden application.
+            </p>
+            <p>
+              <strong>Expected Result:</strong> Correct gesture opens the hidden
+              interface successfully.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End INTEGRATION TESTS section -->
+
+      <!-- Begin PERFORMANCE BENCHMARKS section -->
+      <section class="performance-benchmarks">
+        <h2>Performance Benchmarks</h2>
+        <p class="section-text">
+          Performance testing checks whether the application can run reliably on
+          older Android devices under realistic field constraints.
+        </p>
+        <table class="testing-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Image Input</td>
+              <td>12MP JPEG reconnaissance image</td>
+            </tr>
+            <tr>
+              <td>Message Length</td>
+              <td>100 characters maximum</td>
+            </tr>
+            <tr>
+              <td>Embedding Time</td>
+              <td>Under 30 seconds</td>
+            </tr>
+            <tr>
+              <td>System Stability</td>
+              <td>No crash on older Android hardware</td>
+            </tr>
+            <tr>
+              <td>Resource Usage</td>
+              <td>No critical CPU or RAM spikes</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- End PERFORMANCE BENCHMARKS section -->
+
+      <!-- Begin TRACEABILITY MATRIX section -->
+      <section class="traceability-matrix">
+        <h2>Traceability Matrix</h2>
+        <p class="section-text">
+          This matrix connects major requirements to the tests that verify them.
+        </p>
+        <table class="testing-table">
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Related Test</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Embed short messages inside JPEG images</td>
+              <td>JNI Embedding Flow, DCT unit test</td>
+            </tr>
+            <tr>
+              <td>Reject messages over 100 characters</td>
+              <td>Kotlin UI / Logic unit test</td>
+            </tr>
+            <tr>
+              <td>Run on handheld Android devices</td>
+              <td>Performance benchmark on older Android device</td>
+            </tr>
+            <tr>
+              <td>Allow hidden access through disguised unlock flow</td>
+              <td>Hidden Unlock Flow integration test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- End TRACEABILITY MATRIX section -->
+    </main>
+  </body>
+</html>

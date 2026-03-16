@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Architecture | Hidden In Plain Sight</title>
+
+    <!-- Link custom CSS -->
+    <link rel="stylesheet" href="../css/architecture.css" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Begin NAVIGATION section -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="requirements.html">Requirements</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="design.html">Detailed Design</a></li>
+        <li><a href="testing.html">Verification</a></li>
+        <li><a href="management.html">Management</a></li>
+      </ul>
+    </nav>
+    <!-- End of NAVIGATION section -->
+
+    <!-- Begin MAIN section -->
+    <main>
+      <!-- Begin ARCHITECTURE OVERVIEW section -->
+      <section class="architecture-overview">
+        <!-- Section title -->
+        <h2>Architecture Overview</h2>
+
+        <!-- Section description -->
+        <p class="section-text">
+          Hidden In Plain Sight is a standalone Android application designed for
+          covert communication in field environments. The system allows users to
+          embed short hidden messages inside JPEG images and later extract them
+          using the same application. Its architecture prioritizes offline
+          operation, low runtime overhead, and minimal retention of sensitive
+          data.
+        </p>
+      </section>
+      <!-- End ARCHITECTURE OVERVIEW section -->
+
+      <!-- Begin SYSTEM DIAGRAM section -->
+      <section class="system-diagram">
+        <!-- Section title -->
+        <h2>System Architecture Diagram</h2>
+
+        <!-- Section description -->
+        <p class="section-text">
+          The diagram below illustrates the internal structure of the
+          application, including the user-facing Android layers, the embedding
+          and extraction logic, and the local image-processing workflow.
+        </p>
+
+        <!-- Diagram container -->
+        <div class="diagram-container">
+          <!-- Clickable diagram -->
+          <a href="../assets/img/SystemArchitectureDiagram.jpg" target="_blank">
+            <!-- System diagram image -->
+            <img
+              src="../assets/img/SystemArchitectureDiagram.jpg"
+              alt="System architecture diagram showing the Android UI, application logic, and image processing workflow"
+            />
+          </a>
+        </div>
+      </section>
+      <!-- End SYSTEM DIAGRAM section -->
+
+      <!-- Begin LAYER DETAILS section -->
+      <section class="layer-details">
+        <!-- Section title -->
+        <h2>Architecture Layers</h2>
+
+        <!-- Layer grid -->
+        <div class="layer-grid">
+          <!-- Begin layer 1 -->
+          <div class="layer-card">
+            <h3>Camera Layer</h3>
+            <p>
+              Handles image capture or selection from local storage and passes
+              the chosen image into the application workflow.
+            </p>
+          </div>
+          <!-- End layer 1 -->
+
+          <!-- Begin layer 2 -->
+          <div class="layer-card">
+            <h3>Android UI Layer</h3>
+            <p>
+              Allows the user to choose embed or extract mode, display the
+              selected image, input a hidden message, and view extraction
+              results.
+            </p>
+          </div>
+          <!-- End layer 2 -->
+
+          <!-- Begin layer 3 -->
+          <div class="layer-card">
+            <h3>Application Logic Layer</h3>
+            <p>
+              Validates message length and image type, coordinates embedding and
+              extraction workflows, and ensures the correct processing path is
+              used.
+            </p>
+          </div>
+          <!-- End layer 3 -->
+
+          <!-- Begin layer 4 -->
+          <div class="layer-card">
+            <h3>Steganography and Image Processing Layer</h3>
+            <p>
+              Performs compression-aware embedding and extraction using JPEG DCT
+              coefficient modification, then rebuilds and saves the resulting
+              image locally on the device.
+            </p>
+          </div>
+          <!-- End layer 4 -->
+        </div>
+      </section>
+      <!-- End LAYER DETAILS section -->
+
+      <!-- Begin TECH STACK section -->
+      <section class="tech-stack">
+        <!-- Section title -->
+        <h2>Tech Stack Justification</h2>
+
+        <!-- Tech stack table -->
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th>Technology</th>
+              <th>Purpose</th>
+              <th>Justification</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Kotlin</td>
+              <td>Android application logic</td>
+              <td>
+                Modern Android language with strong support and maintainability.
+              </td>
+            </tr>
+
+            <tr>
+              <td>Jetpack Compose</td>
+              <td>User interface</td>
+              <td>Allows rapid development of a clean Android UI.</td>
+            </tr>
+
+            <tr>
+              <td>C++ / NDK</td>
+              <td>Native steganography processing</td>
+              <td>
+                Provides low-level control needed for JPEG compression-aware
+                embedding.
+              </td>
+            </tr>
+
+            <tr>
+              <td>JNI</td>
+              <td>Kotlin-to-C++ bridge</td>
+              <td>
+                Connects the Android application layer to the native processing
+                layer.
+              </td>
+            </tr>
+
+            <tr>
+              <td>libjpeg-turbo</td>
+              <td>JPEG coefficient access</td>
+              <td>
+                Allows direct handling of DCT coefficients needed for the
+                algorithm.
+              </td>
+            </tr>
+
+            <tr>
+              <td>Local Device Storage</td>
+              <td>Image storage</td>
+              <td>
+                Supports offline use and avoids reliance on remote servers.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- End TECH STACK section -->
+
+      <!-- Begin DEPLOYMENT MODEL section -->
+      <section class="deployment-model">
+        <!-- Section title -->
+        <h2>Deployment Architecture</h2>
+
+        <!-- Section description -->
+        <p class="section-text">
+          The application is intended for offline field use. While traditional
+          civilian applications are often distributed through public app stores,
+          this system is better suited for direct device deployment in
+          controlled environments.
+        </p>
+
+        <!-- Diagram container -->
+        <div class="diagram-container">
+          <!-- Clickable diagram -->
+          <a href="../assets/img/Deployment.png" target="_blank">
+            <!-- Deployment diagram image -->
+            <img
+              src="../assets/img/Deployment.png"
+              alt="Deployment architecture comparing civilian app store distribution and direct offline military deployment"
+            />
+          </a>
+        </div>
+      </section>
+      <!-- End DEPLOYMENT MODEL section -->
+
+      <!-- Begin SECURITY section -->
+      <section class="security-architecture">
+        <!-- Section title -->
+        <h2>Security Architecture</h2>
+
+        <!-- Security card -->
+        <div class="security-card">
+          <h3>Security Goals</h3>
+
+          <ul>
+            <li>Messages are concealed inside ordinary JPEG images.</li>
+            <li>All embedding and extraction occurs locally on the device.</li>
+            <li>
+              Plaintext messages are not stored after embedding or extraction.
+            </li>
+            <li>
+              A gesture-based access trigger helps conceal the application
+              interface.
+            </li>
+            <li>
+              The system avoids dependency on external servers or databases.
+            </li>
+          </ul>
+
+          <h3>Known Limitations</h3>
+
+          <ul>
+            <li>
+              It does not claim resistance against classified military-grade
+              steganalysis.
+            </li>
+            <li>
+              If adversaries know the app is in use, extraction attempts become
+              more likely.
+            </li>
+            <li>
+              The project focuses on covert messaging, not full enterprise key
+              management.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- End SECURITY section -->
+    </main>
+    <!-- End MAIN section -->
+  </body>
+</html>

@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap");
+
+:root {
+  --font-color-primary: #e4ecff;
+  --font-color-secondary: #1e90ff;
+  --font-color-paragraph: #a8b3cf;
+  --background-primary: #0b0f1a;
+  --background-secondary: #10192c;
+  --hover-color: #00bfff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace, sans-serif;
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--font-color-primary);
+  min-height: 100vh;
+}
+
+.nav-menu {
+  width: 100%;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--font-color-secondary);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.05);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 10;
+}
+.nav-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+}
+.nav-menu li {
+  margin: 0 18px;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: var(--font-color-primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--font-color-secondary);
+  background: rgba(30, 144, 255, 0.08);
+  text-shadow: 0 0 8px var(--font-color-secondary);
+  outline: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px 40px 20px;
+}
+
+/* Section Titles */
+.testing-overview h2,
+.unit-tests h2,
+.integration-tests h2,
+.performance-benchmarks h2,
+.traceability-matrix h2 {
+  color: var(--font-color-secondary);
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Section Text */
+.section-text {
+  color: var(--font-color-paragraph);
+  font-size: 1.08rem;
+  margin-bottom: 32px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Table Styles */
+.testing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 0 0;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.07);
+}
+.testing-table th,
+.testing-table td {
+  padding: 14px 12px;
+  text-align: left;
+}
+.testing-table th {
+  background: #18213a;
+  color: var(--font-color-secondary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: 2px solid var(--font-color-secondary);
+}
+.testing-table td {
+  color: var(--font-color-primary);
+  font-size: 1.01rem;
+  border-bottom: 1px solid #22304d;
+}
+.testing-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Card/Grid Styles for Integration */
+.integration-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 18px;
+  margin-bottom: 32px;
+}
+.testing-card {
+  background: var(--background-secondary);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(30, 144, 255, 0.08);
+  padding: 28px 22px 18px 22px;
+  min-width: 260px;
+  max-width: 420px;
+  flex: 1 1 320px;
+  transition: box-shadow 0.18s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.testing-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(30, 144, 255, 0.13);
+}
+.testing-card h3 {
+  color: var(--font-color-secondary);
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.testing-card p {
+  color: var(--font-color-paragraph);
+  font-size: 1.02rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* Section Spacing */
+.testing-overview,
+.unit-tests,
+.integration-tests,
+.performance-benchmarks,
+.traceability-matrix {
+  margin-bottom: 48px;
+}
+
+footer {
+  background: var(--background-secondary);
+  padding: 18px 0;
+  text-align: center;
+  color: var(--font-color-paragraph);
+  border-radius: 0 0 12px 12px;
+  margin-top: 40px;
+  box-shadow: 0 -2px 8px 0 rgba(30, 144, 255, 0.04);
+}

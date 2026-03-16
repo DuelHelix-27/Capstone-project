@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification | Hidden In Plain Sight</title>
+    <link rel="stylesheet" href="../css/management.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Begin NAVIGATION section -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="requirements.html">Requirements</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="design.html">Detailed Design</a></li>
+        <li><a href="testing.html">Verification</a></li>
+        <li><a href="management.html">Management</a></li>
+      </ul>
+    </nav>
+    <!-- End of NAVIGATION section -->
+    <!-- Begin ETHICS OVERVIEW section -->
+    <section class="ethics-overview">
+      <!-- Section title -->
+      <h2>Ethics & Governance</h2>
+
+      <!-- Section description -->
+      <p class="section-text">
+        This section discusses the ethical considerations surrounding the design
+        and deployment of the Hidden In Plain Sight steganographic messaging
+        system. Because the application enables covert communication, it is
+        important to address issues such as privacy, responsible use, system
+        limitations, and research ethics.
+      </p>
+    </section>
+    <!-- End ETHICS OVERVIEW section -->
+
+    <!-- Begin ETHICS STATEMENT section -->
+    <section class="ethics-statement">
+      <!-- Section title -->
+      <h2>Ethics Statement</h2>
+
+      <!-- Privacy subsection -->
+      <div class="ethics-card">
+        <h3>Privacy & Information Protection</h3>
+
+        <p>
+          Hidden In Plain Sight embeds messages inside JPEG images to allow
+          covert communication. Since hidden information may be sensitive, the
+          application is designed so that plaintext messages are not permanently
+          stored. Messages exist only temporarily during the embedding or
+          extraction process and are discarded immediately afterward.
+        </p>
+
+        <p>
+          Additionally, images may contain metadata such as location information
+          or timestamps. While the algorithm modifies JPEG compression
+          coefficients, developers must remain aware that metadata could
+          potentially reveal unintended information.
+        </p>
+      </div>
+
+      <!-- Responsible use subsection -->
+      <div class="ethics-card">
+        <h3>Responsible Use</h3>
+
+        <p>
+          Steganographic communication can support legitimate use cases such as
+          secure intelligence transmission or privacy protection in monitored
+          environments. However, similar techniques could also be misused.
+        </p>
+
+        <p>
+          Because of this dual-use nature, the project documentation clearly
+          defines the intended purpose and limitations of the system and avoids
+          making misleading claims about the technology.
+        </p>
+      </div>
+
+      <!-- Reliability subsection -->
+      <div class="ethics-card">
+        <h3>System Reliability</h3>
+
+        <p>
+          Software used in sensitive communication environments must behave
+          reliably. If an application fails during message embedding or
+          extraction, information could be lost or exposed.
+        </p>
+
+        <p>
+          The system is therefore designed to reject invalid inputs, handle
+          errors safely, and avoid storing hidden messages after they are
+          processed.
+        </p>
+      </div>
+
+      <!-- Transparency subsection -->
+      <div class="ethics-card">
+        <h3>Transparency & Limitations</h3>
+
+        <p>
+          This project does not claim to produce undetectable steganography.
+          Advanced steganalysis techniques may still detect patterns that
+          suggest hidden data. The system aims to reduce detectability rather
+          than guarantee perfect secrecy.
+        </p>
+
+        <p>
+          Documenting these limitations helps ensure that users understand the
+          realistic capabilities of the technology.
+        </p>
+      </div>
+    </section>
+    <!-- End ETHICS STATEMENT section -->
+
+    <!-- Begin IRB STATUS section -->
+    <section class="irb-status">
+      <!-- Section title -->
+      <h2>IRB / CITI Status</h2>
+
+      <!-- Section description -->
+      <p class="section-text">
+        This project does not involve human subject research or the collection
+        of personal data from participants. Testing is performed using developer
+        generated datasets and non-personal images.
+      </p>
+
+      <p class="section-text">
+        Because of this, formal IRB approval is not currently required.
+      </p>
+
+      <!-- Placeholder -->
+      <p><strong>Status:</strong> Not Required (No Human Subject Research)</p>
+    </section>
+    <!-- End IRB STATUS section -->
+
+    <!-- Begin PROJECT TIMELINE section -->
+    <section class="project-timeline">
+      <!-- Section title -->
+      <h2>Project Timeline</h2>
+
+      <!-- Section description -->
+      <p class="section-text">
+        The following timeline outlines the development phases of the project
+        during the semester.
+      </p>
+
+      <!-- Begin timeline table -->
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Milestone</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Weeks 1–2</td>
+            <td>Project proposal and team formation</td>
+          </tr>
+
+          <tr>
+            <td>Weeks 3–4</td>
+            <td>Research on JPEG compression and steganography techniques</td>
+          </tr>
+
+          <tr>
+            <td>Weeks 5–6</td>
+            <td>System architecture and design documentation</td>
+          </tr>
+
+          <tr>
+            <td>Weeks 7–9</td>
+            <td>Implementation of the C++ steganography algorithm</td>
+          </tr>
+
+          <tr>
+            <td>Weeks 10–11</td>
+            <td>Android frontend development with Jetpack Compose</td>
+          </tr>
+
+          <tr>
+            <td>Weeks 12–13</td>
+            <td>Integration testing between Kotlin and C++ layers</td>
+          </tr>
+
+          <tr>
+            <td>Week 14</td>
+            <td>Performance testing and debugging</td>
+          </tr>
+
+          <tr>
+            <td>Week 15</td>
+            <td>
+              Final documentation, poster preparation, and project presentation
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- End timeline table -->
+    </section>
+    <!-- End PROJECT TIMELINE section -->
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+
+    <!-- Mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Requirements | Hidden In Plain Sight</title>
+
+    <!-- Link custom CSS -->
+    <link rel="stylesheet" href="../css/requirements.css" />
+
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Begin NAVIGATION section -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="requirements.html">Requirements</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="design.html">Detailed Design</a></li>
+        <li><a href="testing.html">Verification</a></li>
+        <li><a href="management.html">Management</a></li>
+      </ul>
+    </nav>
+    <!-- End of NAVIGATION section -->
+    <!-- Begin USER STORIES section -->
+    <section class="user-stories">
+      <!-- Section title -->
+      <h2>User Stories & Requirements</h2>
+
+      <!-- Begin STORY 1 -->
+      <div class="story-card">
+        <!-- User story title -->
+        <h3>P0 – Message Embedding</h3>
+
+        <!-- User story description -->
+        <p class="story-text">
+          <strong>User Story:</strong>
+          As an operator, I want to embed short messages inside reconnaissance
+          images.
+        </p>
+
+        <!-- Requirement list -->
+        <h4>Requirements</h4>
+
+        <ul>
+          <li>System must be able to embed hidden messages into images</li>
+          <li>Message must survive compression</li>
+          <li>File size increase must be negligible</li>
+          <li>Message must be relatively hidden to the naked eye</li>
+        </ul>
+
+        <!-- Success metrics -->
+        <h4>Success Metrics</h4>
+
+        <ul>
+          <li>File size increase &lt; 5%</li>
+          <li>Image message not discoverable to the naked eye</li>
+          <li>99% message recovery rate</li>
+          <li>Original image intact after compression</li>
+        </ul>
+      </div>
+      <!-- End STORY 1 -->
+
+      <!-- Begin STORY 2 -->
+      <div class="story-card">
+        <!-- User story title -->
+        <h3>P0 – Message Extraction</h3>
+
+        <!-- User story description -->
+        <p class="story-text">
+          <strong>User Story:</strong>
+          As a command center analyst, I want to extract hidden messages
+          received from reconnaissance missions.
+        </p>
+
+        <!-- Requirement list -->
+        <h4>Requirements</h4>
+
+        <ul>
+          <li>System must detect embedded message</li>
+          <li>System must read and extract hidden messages</li>
+        </ul>
+
+        <!-- Success metrics -->
+        <h4>Success Metrics</h4>
+
+        <ul>
+          <li>99% message extraction rate</li>
+        </ul>
+      </div>
+      <!-- End STORY 2 -->
+
+      <!-- Begin STORY 3 -->
+      <div class="story-card">
+        <!-- User story title -->
+        <h3>P1 – Mobile Field Use</h3>
+
+        <!-- User story description -->
+        <p class="story-text">
+          <strong>User Story:</strong>
+          As a deployed agent, I want the system to run on my handheld Android
+          phone.
+        </p>
+
+        <!-- Requirement list -->
+        <h4>Requirements</h4>
+
+        <ul>
+          <li>Must function on standard Android phones</li>
+          <li>Embedding message must complete in reasonable time</li>
+          <li>System must function without WiFi</li>
+        </ul>
+
+        <!-- Success metrics -->
+        <h4>Success Metrics</h4>
+
+        <ul>
+          <li>Works on majority of Android phones</li>
+          <li>Processing time &lt; 30 seconds per image</li>
+        </ul>
+      </div>
+      <!-- End STORY 3 -->
+
+      <!-- Begin STORY 4 -->
+      <div class="story-card">
+        <!-- User story title -->
+        <h3>P2 – Ease of Training</h3>
+
+        <!-- User story description -->
+        <p class="story-text">
+          <strong>User Story:</strong>
+          As an operator trainer, I want an easy-to-use interface so agents can
+          quickly learn the system.
+        </p>
+
+        <!-- Requirement list -->
+        <h4>Requirements</h4>
+
+        <ul>
+          <li>Application should require minimal steps</li>
+          <li>Clear success/failure feedback</li>
+          <li>Minimal training required</li>
+        </ul>
+
+        <!-- Success metrics -->
+        <h4>Success Metrics</h4>
+
+        <ul>
+          <li>New users can embed messages within 5 minutes of training</li>
+        </ul>
+      </div>
+      <!-- End STORY 4 -->
+
+      <!-- Begin USER FLOW section -->
+      <div class="story-card user-flow-card">
+        <!-- Section title -->
+        <h3>User Flow Diagrams</h3>
+
+        <!-- Section description -->
+        <p class="story-text">
+          Our application supports two primary user scenarios: embedding a
+          hidden message into an image and extracting a hidden message from an
+          image. The diagrams below illustrate both workflows.
+        </p>
+
+        <!-- Begin flow diagram gallery -->
+        <div class="flow-gallery">
+          <!-- Begin FLOW 1 -->
+          <div class="flow-item">
+            <!-- Flow title -->
+            <h4>Embedding Workflow</h4>
+
+            <!-- Clickable flow diagram -->
+            <a href="../assets/img/Embedd.jpeg" target="_blank">
+              <!-- Flow diagram image -->
+              <img
+                src="../assets/img/Embedd.jpeg"
+                alt="User flow diagram showing how an operator embeds a hidden message into an image"
+              />
+            </a>
+
+            <!-- Flow description -->
+            <p>
+              Operator launches app, performs the gesture-based access trigger,
+              selects the embed option, chooses or captures an image, enters a
+              secret message, confirms the action, and shares the encoded image.
+            </p>
+          </div>
+          <!-- End FLOW 1 -->
+
+          <!-- Begin FLOW 2 -->
+          <div class="flow-item">
+            <!-- Flow title -->
+            <h4>Extraction Workflow</h4>
+
+            <!-- Clickable flow diagram -->
+            <a href="../assets/img/Extract.jpeg" target="_blank">
+              <!-- Flow diagram image -->
+              <img
+                src="../assets/img/Extract.jpeg"
+                alt="User flow diagram showing how an analyst extracts a hidden message from an image"
+              />
+            </a>
+
+            <!-- Flow description -->
+            <p>
+              Analyst launches app, performs the gesture-based access trigger,
+              selects the extract option, chooses an image, confirms the action,
+              reads the recovered hidden message, and completes the process.
+            </p>
+          </div>
+          <!-- End FLOW 2 -->
+        </div>
+        <!-- End flow diagram gallery -->
+      </div>
+      <!-- End USER FLOW section -->
+
+      <!-- Begin FIGMA section -->
+      <div class="story-card">
+        <!-- Section title -->
+        <h3>Interactive Prototype</h3>
+
+        <!-- Section description -->
+        <p class="story-text">
+          The following embedded Figma prototype demonstrates the planned user
+          interface and interaction flow for Hidden In Plain Sight.
+        </p>
+
+        <!-- Figma embed container -->
+        <div class="figma-container">
+          <!-- Figma embed -->
+          <iframe
+            style="border: 1px solid rgba(0, 0, 0, 0.1)"
+            width="100%"
+            height="450"
+            src="https://www.figma.com/embed?embed_host=share&url=YOUR_FIGMA_LINK"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+      <!-- End FIGMA section -->
+    </section>
+    <!-- End USER STORIES section -->
+  </body>
+</html>

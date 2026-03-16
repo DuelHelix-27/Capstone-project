@@ -1,0 +1,276 @@
+/* Import google api Font family */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap");
+
+:root {
+  --font-color-primary: #e4ecff;
+  --font-color-secondary: #1e90ff;
+  --font-color-paragraph: #a8b3cf;
+  --background-primary: #0b0f1a;
+  --background-secondary: #10192c;
+  --hover-color: #00bfff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace, sans-serif;
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--font-color-primary);
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px;
+}
+
+/* -------------------------------- */
+/* Header Section */
+/* -------------------------------- */
+
+.header {
+  width: 100%;
+  padding: 60px 0 30px 0;
+  text-align: center;
+  background: var(--background-secondary);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.05);
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  color: var(--font-color-secondary);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.header h3 {
+  font-size: 1.3rem;
+  color: var(--font-color-paragraph);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* -------------------------------- */
+/* Navigation Menu */
+/* -------------------------------- */
+
+.nav-menu {
+  width: 100%;
+  background: var(--background-secondary);
+  border-bottom: 1px solid var(--font-color-secondary);
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.05);
+}
+
+.nav-menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 0;
+}
+
+.nav-menu li {
+  margin: 0 18px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--font-color-primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.nav-menu a:hover {
+  color: var(--font-color-secondary);
+  background: rgba(30, 144, 255, 0.08);
+  text-shadow: 0 0 8px var(--font-color-secondary);
+}
+
+/* -------------------------------- */
+/* Hero Section */
+/* -------------------------------- */
+
+.hero {
+  width: 100%;
+  background: linear-gradient(120deg, #10192c 60%, #1e90ff22 100%);
+  border-radius: 18px;
+  margin: 40px 0 32px 0;
+  padding: 48px 32px 40px 32px;
+  box-shadow: 0 4px 32px 0 rgba(30, 144, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--font-color-secondary);
+  margin-bottom: 12px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--font-color-paragraph);
+  line-height: 1.7;
+}
+
+/* -------------------------------- */
+/* Call to Action Button */
+/* -------------------------------- */
+
+.cta-button {
+  width: 140px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: white;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.1);
+  transition: 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--hover-color);
+  box-shadow: 0 0 12px var(--hover-color);
+}
+
+/* -------------------------------- */
+/* Team Section */
+/* -------------------------------- */
+
+.team {
+  margin: 48px 0 32px 0;
+  padding: 32px 0;
+  background: var(--background-secondary);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(30, 144, 255, 0.07);
+  text-align: center;
+}
+
+.team h2 {
+  color: var(--font-color-secondary);
+  font-size: 2rem;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.member {
+  background: #151d2e;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.08);
+  padding: 24px 18px 18px 18px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s;
+}
+.member:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px 0 rgba(30, 144, 255, 0.13);
+}
+.member img {
+  width: 140px;
+  height: 140px;
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid var(--font-color-secondary);
+  transition:
+    box-shadow 0.18s,
+    transform 0.18s;
+  box-shadow: 0 2px 12px 0 rgba(30, 144, 255, 0.1);
+}
+.member h3 {
+  color: var(--font-color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.member p {
+  color: var(--font-color-paragraph);
+  font-size: 1rem;
+}
+
+/* -------------------------------- */
+/* Quick Links Section */
+/* -------------------------------- */
+
+.links {
+  margin: 40px 0 32px 0;
+  padding: 28px 0 18px 0;
+  background: #151d2e;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.07);
+}
+.links h2 {
+  color: var(--font-color-secondary);
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+.resource-btn {
+  display: inline-block;
+  margin: 0 12px;
+  padding: 10px 28px;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.1);
+}
+.resource-btn:hover {
+  background: var(--hover-color);
+  color: #fff;
+  box-shadow: 0 0 12px var(--hover-color);
+}
+
+/* -------------------------------- */
+/* Footer */
+/* -------------------------------- */
+
+footer {
+  background: var(--background-secondary);
+  padding: 20px 0;
+  text-align: center;
+  color: var(--font-color-paragraph);
+  border-radius: 0 0 12px 12px;
+  margin-top: 40px;
+  box-shadow: 0 -2px 8px 0 rgba(30, 144, 255, 0.04);
+}

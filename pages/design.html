@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <html lang="en">
+    <head>
+      <!-- Character encoding -->
+      <meta charset="UTF-8" />
+
+      <!-- Mobile responsiveness -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>Architecture | Hidden In Plain Sight</title>
+
+      <!-- Link custom CSS -->
+      <link rel="stylesheet" href="../css/design.css" />
+
+      <!-- Boxicons -->
+      <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+      />
+    </head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8" />
+    <body>
+      <!-- Begin NAVIGATION section -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="requirements.html">Requirements</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="design.html">Detailed Design</a></li>
+          <li><a href="testing.html">Verification</a></li>
+          <li><a href="management.html">Management</a></li>
+        </ul>
+      </nav>
+      <!-- End of NAVIGATION section -->
+
+      <main>
+        <!-- Begin DETAILED DESIGN OVERVIEW section -->
+        <section class="design-overview">
+          <!-- Section title -->
+          <h2>Detailed Component Design</h2>
+
+          <!-- Section description -->
+          <p class="section-text">
+            This section explains the internal design of Hidden In Plain Sight.
+            Since the application runs entirely on the Android device, the
+            design focuses on local data handling, core application functions,
+            and the steganography algorithm used to embed and extract hidden
+            messages.
+          </p>
+        </section>
+        <!-- End DETAILED DESIGN OVERVIEW section -->
+
+        <!-- Begin DATA STORAGE section -->
+        <section class="data-storage">
+          <!-- Section title -->
+          <h2>Data Storage Design</h2>
+
+          <!-- Section description -->
+          <p class="section-text">
+            Hidden In Plain Sight does not use a database or remote server. This
+            is an intentional design decision that supports offline field use
+            and reduces the risk of sensitive message retention.
+          </p>
+
+          <!-- Begin storage table -->
+          <table class="storage-table">
+            <!-- Table header -->
+            <thead>
+              <tr>
+                <th>Data Item</th>
+                <th>Stored?</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+
+            <!-- Table body -->
+            <tbody>
+              <tr>
+                <td>JPEG Image</td>
+                <td>Yes</td>
+                <td>
+                  The selected or captured image is stored locally on the device
+                  and is used as the base image for embedding or extraction.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Secret Message</td>
+                <td>No</td>
+                <td>
+                  The plaintext message is entered by the user for embedding,
+                  but it is discarded after processing is complete.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Stego Image</td>
+                <td>Yes</td>
+                <td>
+                  The newly generated steganographic image is saved locally so
+                  it can be shared through normal communication channels.
+                </td>
+              </tr>
+
+              <tr>
+                <td>Extracted Message</td>
+                <td>No</td>
+                <td>
+                  The recovered hidden message is displayed to the user but is
+                  not written to storage after extraction.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- End storage table -->
+        </section>
+        <!-- End DATA STORAGE section -->
+
+        <!-- Begin FUNCTION DESIGN section -->
+        <section class="function-design">
+          <!-- Section title -->
+          <h2>Core Application Functions</h2>
+
+          <!-- Section description -->
+          <p class="section-text">
+            The following functions represent the core logic of the Hidden In
+            Plain Sight system. These functions handle authentication, image
+            selection, and the embedding and extraction of hidden messages.
+          </p>
+
+          <!-- Begin function grid -->
+          <div class="function-grid">
+            <!-- Begin function 1 -->
+            <div class="function-block">
+              <!-- Function title -->
+              <h3>inputGesture()</h3>
+
+              <!-- Function details -->
+              <p><strong>Input:</strong> User gesture</p>
+              <p><strong>Output:</strong> Success | ErrorCode</p>
+              <p>
+                Validates the user's hidden unlock gesture against the stored
+                credentials. If successful, the application transitions from the
+                disguised interface to the hidden messaging system.
+              </p>
+            </div>
+            <!-- End function 1 -->
+
+            <!-- Begin function 2 -->
+            <div class="function-block">
+              <!-- Function title -->
+              <h3>selectImage()</h3>
+
+              <!-- Function details -->
+              <p><strong>Input:</strong> Photo library</p>
+              <p><strong>Output:</strong> PlainImage | ErrorCode</p>
+              <p>
+                Allows the user to select a JPEG image from local device storage
+                using the Android photo picker.
+              </p>
+            </div>
+            <!-- End function 2 -->
+
+            <!-- Begin function 3 -->
+            <div class="function-block">
+              <!-- Function title -->
+              <h3>embedMessage()</h3>
+
+              <!-- Function details -->
+              <p><strong>Input:</strong> Message, PlainImage</p>
+              <p><strong>Output:</strong> StegoImage | ErrorCode</p>
+              <p>
+                Sends the image and message to the native C++ layer through the
+                JNI bridge, where the steganography algorithm modifies JPEG DCT
+                coefficients to encode the hidden message.
+              </p>
+            </div>
+            <!-- End function 3 -->
+
+            <!-- Begin function 4 -->
+            <div class="function-block">
+              <h3>extractMessage()</h3>
+
+              <!-- Function details -->
+              <p><strong>Input:</strong> StegoImage</p>
+              <p><strong>Output:</strong> Message | ErrorCode</p>
+              <p>
+                Sends the steganographic image to the native C++ layer so the
+                algorithm can read the modified DCT coefficients and reconstruct
+                the hidden message.
+              </p>
+            </div>
+            <!-- End function 4 -->
+          </div>
+          <!-- End function grid -->
+        </section>
+        <!-- End FUNCTION DESIGN section -->
+
+        <!-- Begin ALGORITHM LOGIC section -->
+        <section class="algorithm-logic">
+          <!-- Section title -->
+          <h2>Algorithm Logic</h2>
+
+          <!-- Section description -->
+          <p class="section-text">
+            Our algorithm is designed to embed messages before JPEG compression,
+            which differs from many traditional approaches. A JPEG image is
+            broken into small 8x8 pixel blocks and transformed into frequency
+            data using the discrete cosine transform (DCT). These values are
+            then quantized during compression. Instead of waiting until after
+            compression, our system modifies selected DCT coefficients before
+            compression is finalized.
+          </p>
+
+          <!-- Begin algorithm grid -->
+          <div class="algorithm-grid">
+            <!-- Begin embedding algorithm -->
+            <div class="algorithm-card">
+              <!-- Algorithm title -->
+              <h3>Embedding Algorithm</h3>
+
+              <!-- Pseudocode block -->
+              <pre><code>embedMessage(image, message):
+
+  convert message into a binary bit sequence
+
+  load JPEG image
+
+  select a set of mid-frequency DCT coefficients
+
+  avoid very low frequencies
+  avoid very high frequencies
+
+  slightly adjust selected coefficients
+  to encode the message bits
+
+  allow normal JPEG compression to occur
+
+  rebuild and save the steganographic image
+
+  discard the original plaintext message</code></pre>
+
+              <!-- Algorithm description -->
+              <p>
+                Mid-frequency coefficients are used because very low frequencies
+                can create visible image distortion, while very high frequencies
+                are more likely to be destroyed during JPEG compression. This
+                makes mid-frequency values the best location for hiding the
+                message while preserving image quality.
+              </p>
+            </div>
+            <!-- End embedding algorithm -->
+
+            <!-- Begin extraction algorithm -->
+            <div class="algorithm-card">
+              <!-- Algorithm title -->
+              <h3>Extraction Algorithm</h3>
+
+              <!-- Pseudocode block -->
+              <pre><code>extractMessage(image):
+
+  load steganographic JPEG image
+
+  read the same selected DCT coefficients
+
+  reconstruct the hidden binary message
+
+  convert binary data back into text
+
+  display the recovered message to the user
+
+  do not store the extracted message</code></pre>
+
+              <!-- Algorithm description -->
+              <p>
+                The extraction process reverses the embedding process by reading
+                the same coefficient locations that were modified earlier. The
+                hidden bit sequence is reconstructed and converted back into a
+                readable message.
+              </p>
+            </div>
+            <!-- End extraction algorithm -->
+          </div>
+          <!-- End algorithm grid -->
+        </section>
+        <!-- End ALGORITHM LOGIC section -->
+      </main>
+    </body>
+  </html>
+</html>
