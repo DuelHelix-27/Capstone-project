@@ -108,7 +108,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 24px;
+}
+
+.hero-copy {
+  width: 100%;
 }
 
 .hero h1 {
@@ -128,6 +132,52 @@ main {
   font-size: 1.1rem;
   color: var(--font-color-paragraph);
   line-height: 1.7;
+}
+
+.hero-media {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-media h3 {
+  color: var(--font-color-secondary);
+  font-size: 1.4rem;
+  margin: 0;
+  text-align: center;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(30, 144, 255, 0.12);
+}
+
+.hero-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+}
+
+@media (min-width: 960px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .hero-copy {
+    max-width: 55%;
+  }
+
+  .hero-media {
+    max-width: 40%;
+  }
 }
 
 /* -------------------------------- */
@@ -259,6 +309,60 @@ main {
   background: var(--hover-color);
   color: #fff;
   box-shadow: 0 0 12px var(--hover-color);
+}
+
+.demo-section {
+  margin: 40px 0 32px 0;
+  padding: 32px 24px;
+  background: #151d2e;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(30, 144, 255, 0.07);
+}
+
+.demo-section h2 {
+  color: var(--font-color-secondary);
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.demo-section p {
+  color: var(--font-color-paragraph);
+  max-width: 760px;
+  margin: 0 auto 26px auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.demo-video {
+  background: #0b0f1a;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(30, 144, 255, 0.12);
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.demo-video h3 {
+  color: var(--font-color-secondary);
+  font-size: 1.15rem;
+  margin: 18px 18px 12px 18px;
+}
+
+.demo-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
 }
 
 /* -------------------------------- */
